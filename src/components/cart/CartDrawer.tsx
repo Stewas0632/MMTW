@@ -148,7 +148,9 @@ export default function CartDrawer() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <Link href="/checkout" onClick={closeCart} className="block">
-                  <Button className="w-full">Checkout</Button>
+                  <Button className="w-full" variant="flame">
+                    Checkout
+                  </Button>
                 </Link>
               </div>
             )}
