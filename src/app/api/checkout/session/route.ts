@@ -1,0 +1,23 @@
+import { getStripe } from "@/lib/stripe";
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const sessionId = searchParams.get("session_id");
+
+  if (!sessionId) {
+    return Response.json({ error: "Missing session_id" }, { status: 400 });
+  }
+
+  try {
+    const stripe = getStripe();
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+    return Response.json({
+      status: session.status,
+      customerEmail: session.customer_details?.email,
+      amountTotal: session.amount_total,
+    });
+  } catch {
+    return Response.json({ error: "Invalid session" }, { status: 400 });
+  }
+}

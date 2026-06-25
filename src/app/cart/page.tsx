@@ -5,10 +5,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { useCart } from "@/context/CartContext";
+import { calculateOrderTotal } from "@/lib/checkout";
 import { formatPrice } from "@/lib/utils";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, subtotal } = useCart();
+  const { shipping, tax, total } = calculateOrderTotal(subtotal);
 
   return (
     <div className="min-h-screen bg-mmtw-black pt-24 md:pt-28">
@@ -119,10 +121,14 @@ export default function CartPage() {
                 </span>
               </div>
               <p className="mt-2 font-sans text-xs text-mmtw-muted">
-                Shipping and taxes calculated at checkout.
+                Shipping: {shipping === 0 ? "Free" : formatPrice(shipping)} ·
+                Tax: {formatPrice(tax)}
+              </p>
+              <p className="mt-1 font-sans text-xs text-mmtw-muted">
+                Total: {formatPrice(total)} — calculated at checkout
               </p>
               <Link href="/checkout" className="mt-8 block">
-                <Button className="w-full" size="lg">
+                <Button className="w-full" size="lg" variant="flame">
                   Proceed to Checkout
                 </Button>
               </Link>
