@@ -174,6 +174,7 @@ export const navLinks = [
   { label: "Shop", href: "/shop" },
   { label: "Lookbook", href: "/lookbook" },
   { label: "About", href: "/about" },
+  { label: "Questions", href: "/questions" },
   { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/faq" },
 ];
