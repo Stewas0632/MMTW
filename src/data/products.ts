@@ -172,6 +172,7 @@ export const categories = [
 
 export const navLinks = [
   { label: "Shop", href: "/shop" },
+  { label: "Campaign", href: "/campaign" },
   { label: "Lookbook", href: "/lookbook" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

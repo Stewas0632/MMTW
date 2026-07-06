@@ -9,6 +9,7 @@ const socialLinks = [
 
 const footerLinks = [
   { label: "Shop", href: "/shop" },
+  { label: "Campaign", href: "/campaign" },
   { label: "About", href: "/about" },
   { label: "Lookbook", href: "/lookbook" },
   { label: "FAQ", href: "/faq" },
