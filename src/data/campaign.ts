@@ -48,9 +48,9 @@ export const campaignImages: CampaignImage[] = [
 ];
 
 export const campaignContent = {
-  headline: "The Campaign",
+  headline: "Official Promo",
   subheadline:
-    "Official MMTW promotional imagery. Pure brand energy — not tied to individual product listings.",
+    "MMTW brand photography — the movement in motion. Pure brand energy on display.",
   ctaText: "Shop Collection",
   ctaLink: "/shop",
 };
